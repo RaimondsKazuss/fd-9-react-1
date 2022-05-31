@@ -32,7 +32,7 @@ export const zIndexes = {
 
 export const devices = {
   mobile: "@media (min-width: 430px)",
-  tablet: "@media (min-with: 768px)",
-  laptop: "@media (min-with: 1024px)",
-  desktop: "@media (min-with: 1440px)",
+  tablet: "@media (min-width: 768px)",
+  laptop: "@media (min-width: 1024px)",
+  desktop: "@media (min-width: 1440px)",
 };

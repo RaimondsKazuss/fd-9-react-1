@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors, fontSizes, margins } from "../../theme/theme";
+import { colors, fontSizes, margins, devices } from "../../theme/theme";
 
 const Card = styled.div`
   width: 19rem;
@@ -15,6 +15,14 @@ const Card = styled.div`
 
   &:last-child {
     margin: 0 auto;
+  }
+
+  ${devices.mobile} {
+    width: 100%;
+  }
+
+  ${devices.laptop} {
+    width: 19rem;
   }
 `;
 
