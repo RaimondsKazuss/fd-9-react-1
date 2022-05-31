@@ -1,7 +1,7 @@
-import Nav from "./Nav/Nav";
+import Nav from "./components/Nav/Nav";
 import GlobalStyle from "./GlobalStyle";
-import HighLightCard from "./HighLightCard/HighLightCard";
-import CardContainer from "./CardContainer/CardContainer";
+import HighLightCard from "./components/HighLightCard/HighLightCard";
+import CardContainer from "./components/CardContainer/CardContainer";
 
 const data = [
   {

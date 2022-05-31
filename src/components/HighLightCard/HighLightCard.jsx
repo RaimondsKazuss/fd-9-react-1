@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors, fontSizes, margins } from "../../theme/theme";
 
 const Card = styled.div`
   width: 19rem;
@@ -6,11 +7,11 @@ const Card = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: ${fontSizes.md};
   font-weight: 700;
-  background: #dbe2ef;
-  color: #112d4e;
-  margin: 0 auto 1rem;
+  background: ${colors.bg};
+  color: ${colors.darkBlue};
+  margin: 0 auto ${margins.sm};
 
   &:last-child {
     margin: 0 auto;

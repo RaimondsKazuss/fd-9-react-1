@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { colors, margins } from "../../theme/theme";
 
 const StyledNav = styled.header`
   border: 1px solid #ff0ff0;
@@ -16,14 +17,14 @@ const StyledNav = styled.header`
 const Logo = styled.div`
   width: 3rem;
   height: 3rem;
-  margin: 0.5rem;
-  background: #dbe2ef;
+  margin: ${margins.xs};
+  background: ${colors.bg};
 `;
 
 const BurgerBtn = styled.button`
   width: 3rem;
   height: 3rem;
-  margin: 0.5rem;
+  margin: ${margins.xs};
 `;
 
 const DropDown = styled.div`
@@ -32,7 +33,7 @@ const DropDown = styled.div`
   top: 4rem;
   width: 7rem;
   height: 7rem;
-  background: #dbe2ef;
+  background: ${colors.bg};
   border: 1px solid #ff0000;
 `;
 
