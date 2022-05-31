@@ -1,33 +1,21 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer/Footer";
 import Nav from "./components/Nav/Nav";
 import GlobalStyle from "./GlobalStyle";
-import HighLightCard from "./components/HighLightCard/HighLightCard";
-import CardContainer from "./components/CardContainer/CardContainer";
-
-const data = [
-  {
-    id: 1,
-    title: "some title one",
-  },
-  {
-    id: 2,
-    title: "some title two",
-  },
-  {
-    id: 3,
-    title: "some title three",
-  },
-];
+import Home from "./pages/Home/Home";
 
 const App = () => {
   return (
     <>
       <GlobalStyle />
-      <Nav />
-      <CardContainer>
-        {data.map((card) => {
-          return <HighLightCard key={card.id} title={card.title} />;
-        })}
-      </CardContainer>
+      <BrowserRouter>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<div>404</div>} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </>
   );
 };
