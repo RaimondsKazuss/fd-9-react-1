@@ -29,6 +29,7 @@ const StyledNav = styled.header`
 const Logo = styled.div`
   width: 3rem;
   height: 3rem;
+  display: inline-block;
   margin: ${margins.xs};
   background: url(${logoImage}) center/contain no-repeat ${colors.lightBlue};
 `;
@@ -37,10 +38,8 @@ const NavButtonWrapper = styled.div`
   display: none;
 
   ${devices.mobile} {
-    display: flex;
+    display: inline-block;
     height: 100%;
-    justify-content: center;
-    align-items: center;
   }
 `;
 
