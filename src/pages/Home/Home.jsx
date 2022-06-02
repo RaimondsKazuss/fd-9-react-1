@@ -3,7 +3,7 @@ import HighLightCard from "../../components/HighLightCard/HighLightCard";
 import { posts } from "../../data/data";
 
 const getHighLightPosts = () => {
-  return posts.slice(0, 3);
+  return posts.slice(posts.length - 3);
 };
 
 const Home = () => {
