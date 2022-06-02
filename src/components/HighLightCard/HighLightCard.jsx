@@ -13,6 +13,22 @@ const Card = styled.div`
   color: ${colors.darkBlue};
   margin: 0 auto ${margins.sm};
 
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background: url(${(props) => props && props.image}) center/cover no-repeat
+      ${colors.bg};
+    opacity: 0.2;
+  }
+
   &:last-child {
     margin: 0 auto;
   }
@@ -26,8 +42,9 @@ const Card = styled.div`
   }
 `;
 
-const HighLightCard = ({ title }) => {
-  return <Card>{title}</Card>;
+const HighLightCard = ({ data }) => {
+  const { title, bg } = data;
+  return <Card image={bg}>{title}</Card>;
 };
 
 export default HighLightCard;

@@ -1,26 +1,18 @@
 import CardContainer from "../../components/CardContainer/CardContainer";
 import HighLightCard from "../../components/HighLightCard/HighLightCard";
+import { posts } from "../../data/data";
 
-const data = [
-  {
-    id: 1,
-    title: "some title one",
-  },
-  {
-    id: 2,
-    title: "some title two",
-  },
-  {
-    id: 3,
-    title: "some title three",
-  },
-];
+const getHighLightPosts = () => {
+  return posts.slice(0, 3);
+};
 
 const Home = () => {
+  const postData = getHighLightPosts();
+
   return (
     <CardContainer>
-      {data.map((card) => {
-        return <HighLightCard key={card.id} title={card.title} />;
+      {postData.map((card) => {
+        return <HighLightCard key={card.id} data={card} />;
       })}
     </CardContainer>
   );

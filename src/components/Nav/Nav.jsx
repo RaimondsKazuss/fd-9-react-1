@@ -9,10 +9,10 @@ import {
   margins,
   zIndexes,
 } from "../../theme/theme";
-import logoImage from "../../assets/logo-128.png";
-import menuIcon from "../../assets/icon-menu.svg";
-import plusIcon from "../../assets/icon-plus.svg";
-import userIcon from "../../assets/icon-person.svg";
+import logoImage from "../../assets/logo-128.svg";
+import menuIcon from "../../assets/icons/icon-menu.svg";
+import plusIcon from "../../assets/icons/icon-plus.svg";
+import userIcon from "../../assets/icons/icon-person.svg";
 
 const StyledNav = styled.header`
   border: 1px solid #ff0ff0;
@@ -20,9 +20,9 @@ const StyledNav = styled.header`
   height: 4rem; //64px
   position: absolute;
   top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: space-between; */
   box-sizing: border-box;
 `;
 
@@ -33,28 +33,14 @@ const Logo = styled.div`
   background: url(${logoImage}) center/contain no-repeat ${colors.lightBlue};
 `;
 
-const BurgerBtn = styled.button`
-  width: 3rem;
-  height: 3rem;
-  margin: ${margins.xs};
-  background: url(${menuIcon}) center no-repeat;
+const NavButtonWrapper = styled.div`
+  display: none;
 
   ${devices.mobile} {
-    display: none;
-  }
-`;
-
-const MobileMenu = styled.div`
-  width: 100%;
-  height: calc(100vh - 4rem);
-  position: absolute;
-  right: 0;
-  top: 4rem;
-  background: ${colors.bg};
-  z-index: ${zIndexes.sideBar};
-
-  ${devices.mobile} {
-    display: none;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -71,16 +57,6 @@ const HeaderNavLink = styled(StyledLink)`
 
   ${devices.mobile} {
     display: inline-block;
-  }
-`;
-
-const NavButtonWrapper = styled.div`
-  display: none;
-
-  ${devices.mobile} {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 `;
 
@@ -106,6 +82,32 @@ const DropDown = styled.div`
   }
 `;
 
+const BurgerBtn = styled.button`
+  width: 3rem;
+  height: 3rem;
+  margin: ${margins.xs};
+  float: right;
+  background: url(${menuIcon}) center no-repeat;
+
+  ${devices.mobile} {
+    display: none;
+  }
+`;
+
+const MobileMenu = styled.div`
+  width: 100%;
+  height: calc(100vh - 4rem);
+  position: absolute;
+  right: 0;
+  top: 4rem;
+  background: ${colors.bg};
+  z-index: ${zIndexes.sideBar};
+
+  ${devices.mobile} {
+    display: none;
+  }
+`;
+
 const Nav = () => {
   const navigate = useNavigate();
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
@@ -117,6 +119,8 @@ const Nav = () => {
       <NavButtonWrapper>
         <HeaderNavLink to="/">Home</HeaderNavLink>
         <HeaderNavLink to="/all-posts">All posts</HeaderNavLink>
+      </NavButtonWrapper>
+      <NavButtonWrapper>
         <NavButton icon={plusIcon} onClick={() => navigate("/create")} />
         <NavButton
           icon={userIcon}
