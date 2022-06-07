@@ -4,6 +4,7 @@ import { colors, margins, paddings, zIndexes } from "../../theme/theme";
 import ModalContext from "../../context/ModelContext";
 import iconX from "../../assets/icons/icon-x.svg";
 import Login from "./Login";
+import Register from "./Register";
 
 const Backdrop = styled.div`
   width: 100%;
@@ -53,7 +54,7 @@ const Auth = () => {
   if (formType === "login") {
     chosenForm = <Login formChangeHandler={formChangeHandler} />;
   } else if (formType === "register") {
-    chosenForm = <div>register form</div>;
+    chosenForm = <Register formChangeHandler={formChangeHandler} />;
   } else {
     chosenForm = <div>forgot password form</div>;
   }
