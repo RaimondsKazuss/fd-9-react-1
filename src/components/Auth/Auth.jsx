@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import { colors, margins, zIndexes } from "../../theme/theme";
+import { colors, margins, paddings, zIndexes } from "../../theme/theme";
 import ModalContext from "../../context/ModelContext";
 import iconX from "../../assets/icons/icon-x.svg";
 import Login from "./Login";
@@ -23,6 +23,10 @@ const FormContainer = styled.div`
   width: 19rem;
   min-height: 19rem;
   background: ${colors.bg};
+  padding: ${paddings.md};
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
 `;
 
 const CloseButton = styled.button`

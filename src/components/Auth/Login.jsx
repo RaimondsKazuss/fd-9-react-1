@@ -1,15 +1,9 @@
-import { ErrorMessage, Field, Form, Formik } from "formik";
-import styled from "styled-components";
+import { Form, Formik } from "formik";
 import { object, string } from "yup";
-import { colors, margins } from "../../theme/theme";
-
-const SubmitButton = styled.button`
-  width: 100%;
-  height: 2rem;
-  margin-top: ${margins.md};
-  background: ${colors.darkBlue};
-  color: ${colors.bg};
-`;
+import FormError from "../FormError/FormError";
+import FormTitle from "../FormTitle/FormTitle";
+import InputField from "../InputField/InputField";
+import SubmitButton from "../SubmitButton/SubmitButton";
 
 const validationSchema = object({
   userName: string().required(),
@@ -27,11 +21,12 @@ const Login = () => {
       onSubmit={(values) => console.log(values)}
     >
       <Form>
-        <Field type="text" name="userName" />
-        <ErrorMessage name="userName" />
-        <Field type="password" name="password" />
-        <SubmitButton type="submit">Log in</SubmitButton>
-        <ErrorMessage name="password" />
+        <FormTitle>Log in</FormTitle>
+        <InputField type="text" name="userName" />
+        <FormError name="userName" />
+        <InputField type="password" name="password" />
+        <FormError name="password" />
+        <SubmitButton>Log in</SubmitButton>
       </Form>
     </Formik>
   );

@@ -2,6 +2,7 @@ export const colors = {
   bg: "#F9F7F7",
   darkBlue: "#112D4E",
   lightBlue: "#DBE2EF",
+  error: "#ff6347",
 };
 
 export const fontSizes = {
