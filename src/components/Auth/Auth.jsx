@@ -5,6 +5,7 @@ import ModalContext from "../../context/ModelContext";
 import iconX from "../../assets/icons/icon-x.svg";
 import Login from "./Login";
 import Register from "./Register";
+import Forgot from "./Forgot";
 
 const Backdrop = styled.div`
   width: 100%;
@@ -42,7 +43,7 @@ const CloseButton = styled.button`
 const Auth = () => {
   const { setIsOpen } = useContext(ModalContext);
   // "login" , "register" , "forgot"
-  const [formType, setFormType] = useState("login");
+  const [formType, setFormType] = useState("register");
   let chosenForm;
 
   const formChangeHandler = (formTypeName) => setFormType(formTypeName);
@@ -56,7 +57,7 @@ const Auth = () => {
   } else if (formType === "register") {
     chosenForm = <Register formChangeHandler={formChangeHandler} />;
   } else {
-    chosenForm = <div>forgot password form</div>;
+    chosenForm = <Forgot formChangeHandler={formChangeHandler} />;
   }
 
   return (
