@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import styled from "styled-components";
 import { colors, margins, paddings, zIndexes } from "../../theme/theme";
 import ModalContext from "../../context/ModelContext";
@@ -40,16 +40,29 @@ const CloseButton = styled.button`
 
 const Auth = () => {
   const { setIsOpen } = useContext(ModalContext);
+  // "login" , "register" , "forgot"
+  const [formType, setFormType] = useState("login");
+  let chosenForm;
+
+  const formChangeHandler = (formTypeName) => setFormType(formTypeName);
 
   const closeModal = () => {
     setIsOpen(false);
   };
 
+  if (formType === "login") {
+    chosenForm = <Login formChangeHandler={formChangeHandler} />;
+  } else if (formType === "register") {
+    chosenForm = <div>register form</div>;
+  } else {
+    chosenForm = <div>forgot password form</div>;
+  }
+
   return (
     <Backdrop>
       <FormContainer>
         <CloseButton onClick={closeModal} />
-        <Login />
+        {chosenForm}
       </FormContainer>
     </Backdrop>
   );
