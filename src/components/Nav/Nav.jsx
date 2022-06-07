@@ -73,6 +73,7 @@ const DropDown = styled.div`
   top: 4rem;
   width: 12rem;
   background: ${colors.bg};
+  z-index: ${zIndexes.sideBar};
 
   display: none;
 
